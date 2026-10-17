@@ -1,0 +1,13 @@
+Layer | Shape (B,C,H,W or B,N)
+Input | (1, 3, 120, 120)
+Conv1 + sigmoid | (1, 4, 120, 120)
+Pool1 | (1, 4, 60, 60)
+Conv2 + sigmoid | (1, 8, 60, 60)
+Pool2 | (1, 8, 30, 30)
+Flatten | (1, 7200)
+FC + sigmoid | (1, 3)
+Output column vector: (3, 1)
+MSE: 0.000000000000e+00
+Maximum absolute error: 0.000000000000e+00
+Custom forward seconds: 0.6682
+PyTorch forward seconds: 0.0022

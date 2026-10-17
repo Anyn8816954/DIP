@@ -1,0 +1,35 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# LaTeX output: publish the current report PDF only
+/HW01/hw1/build/*
+!/HW01/hw1/build/content.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.toc
+*.lof
+*.lot
+content-preview.*
+
+# Course materials, local references and old output
+/HW01/assignment/
+/HW01/lectures/
+/HW01/hw1/media/
+/HW01/hw1/references/
+/HW01/hw1/archive/
+/logs/
+
+# Local credentials and operating-system files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+desktop.ini

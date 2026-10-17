@@ -1,0 +1,74 @@
+% !LW recipe=XeLaTeX (2 passes)
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% Compile from this file's directory; image paths are relative to hw1/.
+\documentclass[UTF8,a4paper,11pt,fontset=none]{ctexart}
+
+% Windows fonts cover the Traditional Chinese characters used in this report.
+\setCJKmainfont{Microsoft JhengHei}[AutoFakeSlant=0.2]
+\setCJKsansfont{Microsoft JhengHei}[AutoFakeSlant=0.2]
+\setCJKmonofont{Microsoft JhengHei}[AutoFakeSlant=0.2]
+
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{results/}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\renewcommand{\arraystretch}{1.2}
+\captionsetup{font=small}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!65!black},
+  commentstyle=\color{green!35!black},
+  stringstyle=\color{orange!65!black},
+  backgroundcolor=\color{black!3},
+  frame=single,
+  rulecolor=\color{black!20},
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=4
+}
+
+% #1: before filename, #2: after filename, #3: caption, #4: label.
+\newcommand{\GammaComparison}[4]{%
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.35\textheight,keepaspectratio]{#1}
+      \caption{處理前：灰階原圖}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.35\textheight,keepaspectratio]{#2}
+      \caption{處理後：Gamma 轉換}
+    \end{subfigure}
+    \caption{#3}
+    \label{#4}
+  \end{figure}%
+}
+
+\title{數位影像處理 HW1 技術報告}
+\author{組員姓名與學號：待填}
+\date{}
+
+\begin{document}
+\maketitle
+
+% Additional technical sections can be inserted here as the assignment proceeds.
+\input{report_sections/gamma_comparison}
+
+\end{document}
